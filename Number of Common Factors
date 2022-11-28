@@ -1,0 +1,16 @@
+class Solution(object):
+    def commonFactors(self, a, b):
+        """
+        :type a: int
+        :type b: int
+        :rtype: int
+        """
+        c = 0 
+        d = 1
+        while d <= b and d <= a:
+            if b % d == 0 and a % d == 0:
+                c += 1
+                d += 1
+            else:
+                d += 1
+        return c
