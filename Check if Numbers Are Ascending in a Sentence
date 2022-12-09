@@ -1,0 +1,16 @@
+class Solution(object):
+    def areNumbersAscending(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        x = 0
+        y = 0
+        c = 0
+        while x < len(s):
+            if s[x] == type(int):
+                if c > s[x]:
+                    return false
+                else:
+                    x += 1
+        return true
