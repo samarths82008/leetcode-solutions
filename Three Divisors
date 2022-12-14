@@ -1,0 +1,18 @@
+class Solution(object):
+    def isThree(self, n):
+        """
+        :type n: int
+        :rtype: bool
+        """
+        x = sqrt(n)
+        if n == 1:
+            return False
+        if x*10 % 10 != 0:
+            return False
+        x = int(x)
+        for i in range(1,x):
+            if x % i == 0 and i != 1:
+                return False
+            else:
+                continue
+        return True
