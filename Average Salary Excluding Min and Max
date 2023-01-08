@@ -1,0 +1,14 @@
+class Solution(object):
+    def average(self, salary):
+        """
+        :type salary: List[int]
+        :rtype: float
+        """
+        a = min(salary)
+        c = max(salary)
+        e = len(salary) - 2
+        b = 0
+        for i in range(len(salary)):
+            b += salary[i]
+        b = b - a - c
+        return float(b) / float(e)
