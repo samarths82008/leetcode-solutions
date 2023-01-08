@@ -1,0 +1,15 @@
+x = 0
+b = 10**9
+a = 10**4
+l = []
+y = length*width*height
+if length >= a or width >= a or height >= a or mass >= a or y >= b:
+     l.append("Bulky")
+if mass >= 100:
+     l.append("Heavy")
+if len(l) == 2:
+     return "Both"
+elif len(l) == 1:
+     return l[0]
+else:
+     return "Neither"
