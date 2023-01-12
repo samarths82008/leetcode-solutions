@@ -1,0 +1,31 @@
+class Solution(object):
+    def maxNumberOfBalloons(self, text):
+        """
+        :type text: str
+        :rtype: int
+        """
+        n = 0
+        b = 0
+        a = 0
+        l = 0
+        o = 0
+        x = []
+        for i in range(len(text)):
+            if text[i] == 'n':
+                n += 1
+            elif text[i] == 'b':
+                b += 1
+            elif text[i] == 'a':
+                a += 1
+            elif text[i] == 'l':
+                l += 1
+            elif text[i] == 'o':
+                o += 1
+        x.append(n)
+        x.append(b)
+        x.append(a)
+        o = o // 2
+        l = l // 2
+        x.append(o)
+        x.append(l)
+        return min(x)
