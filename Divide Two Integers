@@ -1,0 +1,28 @@
+class Solution(object):
+    def divide(self, dividend, divisor):
+        """
+        :type dividend: int
+        :type divisor: int
+        :rtype: int
+        """
+        i = -1
+        if dividend <= 0 and divisor < 0:
+            while dividend <= 0:
+                dividend = dividend - divisor
+                i += 1
+            return i
+        elif dividend <= 0 and divisor > 0:
+            while dividend <= 0:
+                dividend = dividend + divisor
+                i += 1
+            return i*-1
+        elif dividend >= 0 and divisor > 0:
+            while dividend >= 0:
+                dividend = dividend - divisor
+                i += 1
+            return i
+        else:
+            while dividend >= 0:
+                dividend = dividend + divisor
+                i += 1
+            return i*-1
