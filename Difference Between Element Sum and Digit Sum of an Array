@@ -1,0 +1,21 @@
+class Solution(object):
+    def differenceOfSum(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        sum_ = 0
+        dig_sum = 0
+        def getSum(n):
+            sum = 0
+            for digit in str(n): 
+                sum += int(digit)      
+            return sum
+        print(getSum(15))
+        for i in range(len(nums)):
+            sum_ += nums[i]
+            dig_sum += getSum(nums[i])
+        if sum_ >= dig_sum:
+            return sum_ - dig_sum
+        else:
+            return dig_sum - sum_
