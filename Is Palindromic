@@ -1,0 +1,30 @@
+class Solution(object):
+    def isStrictlyPalindromic(self, n):
+        """
+        :type n: int
+        :rtype: bool
+        """
+        t = 2
+        
+        while t < n-1:
+            l = []
+            for i in range(0,18):
+                c = t**i
+                if n >= c:            
+                    l.append(c)
+                else:
+                    break
+            e = []
+            b = n
+            l = l[::-1]
+            for k in range(len(l)):
+                p = l[k]
+                q = b // p
+                e.append(str(q))
+                b -= p*q
+            
+            s = ''.join(e)
+            if s != s[::-1]:
+                return False
+            t += 1
+        return True
