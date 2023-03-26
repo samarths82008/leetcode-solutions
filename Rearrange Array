@@ -1,0 +1,12 @@
+class Solution(object):
+    def rearrangeArray(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+        p, n = [x for x in nums if x > 0], [x for x in nums if x < 0]
+        l = []
+        for i in range(len(p)):
+            l.append(p[i])
+            l.append(n[i])
+        return l    
