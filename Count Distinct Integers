@@ -1,0 +1,22 @@
+class Solution(object):
+    def countDistinctIntegers(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+
+        def reversedk(number):
+            revs_number = 0
+            while (number > 0): 
+                remainder = number % 10  
+                revs_number = (revs_number * 10) + remainder  
+                number = number // 10
+            return revs_number
+        k = {}
+        for i in range(len(nums)):
+            a = reversedk(nums[i])
+            if a not in k:
+                k[a] = 1
+            if nums[i] not in k:
+                k[nums[i]] = 1
+        return(len(k))
