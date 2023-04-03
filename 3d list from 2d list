@@ -1,0 +1,18 @@
+class Solution(object):
+    def findMatrix(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[List[int]]
+        """
+        nums.sort(reverse=True)
+        l = []
+        i = []
+        for num in nums:
+            for i in l:
+                if num not in i:
+                    i.append(num)
+                    break
+            else:
+                l.append([num])
+        return l
+        
