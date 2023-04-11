@@ -1,0 +1,16 @@
+# Given a string s, sort it in decreasing order based on the frequency of the characters. The frequency of a character is the number of times it appears in the string.
+class Solution:
+    def frequencySort(self, s: str) -> str:
+        d = {}
+        for c in s:
+            if c in d:
+                d[c] += 1
+            else:
+                d[c] = 1
+        
+        a = [k*v for k,v in sorted(d.items(), key=lambda item: item[1], reverse=True)]
+        print(a)
+        l = ''.join(a)
+        #for k, v in c.items():
+        #    l = l + v*k
+        return l
