@@ -1,0 +1,7 @@
+class Solution:
+    def findDifference(self, nums1: List[int], nums2: List[int]) -> List[List[int]]:
+        l1=[]
+        x,y=set(nums1),set(nums2)
+        l1.append(list(x-y))
+        l1.append(list(y-x))
+        return l1
