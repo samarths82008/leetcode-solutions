@@ -1,6 +1,9 @@
+# find the difference between two lists of integers
+# The elements that are in list 1 and not in list 2 will be added to a seperate list and vice versa
 class Solution:
     def findDifference(self, nums1: List[int], nums2: List[int]) -> List[List[int]]:
         l1=[]
+        # sets have special properties which allow you to subtract them
         x,y=set(nums1),set(nums2)
         l1.append(list(x-y))
         l1.append(list(y-x))
