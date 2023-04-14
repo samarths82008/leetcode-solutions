@@ -1,9 +1,11 @@
+# Find the largest possible integer in the given array such that its negative is also there
 class Solution:
     def findMaxK(self, nums: List[int]) -> int:
         min = 0
         max = 0
         for i in range(len(nums)):
             if nums[i] > max:
+                # if nums[i]'s negative is in the list, max = nums[i]
                 if nums[i]*-1 in nums:
                     max = nums[i]
                     min += 1
