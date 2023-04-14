@@ -12,13 +12,16 @@ class Solution(object):
         :type customers: str
         :rtype: int
         """
+        # count the number of Y's that are in the string
         penalty = customers.count('Y')
         m = penalty
         c = 0
         for i in range(len(customers)):
             if customers[i] == 'Y':
+                # subtract one if there is a Y 
                 penalty -= 1
             else:
+                # add one if there is a N
                 penalty += 1            
             if penalty < m:
                 m = penalty
