@@ -1,0 +1,13 @@
+class Solution:
+    def sumOfMultiples(self, n: int) -> int:
+        count = 0
+        k = 1 
+        while k != n+1:
+            if k % 3 == 0:
+                count += k
+            elif k % 5 == 0:
+                count += k
+            elif k % 7 == 0:
+                count += k
+            k += 1
+        return count 
