@@ -1,0 +1,6 @@
+class Solution:
+    def maximizeSum(self, nums: List[int], k: int) -> int:
+        nums.sort()
+        print(nums)
+        m = len(nums)
+        return (nums[m-1]*k)+k*(k-1)//2
