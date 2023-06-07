@@ -1,0 +1,12 @@
+class Solution:
+    def buyChoco(self, prices: List[int], money: int) -> int:
+        # sort the list so we can find the two smallest chocolate bars
+        prices.sort()
+        if prices[0] + prices[1] > money:
+            # return money if the sum of the prices of those 2 chocolate bars
+            # is greater than amount of money you have
+            return money
+        else:
+            # if not return the amount of money you have left after buying
+            # the two bars
+            return money - prices[0] - prices[1]
