@@ -1,0 +1,16 @@
+class Solution(object):
+    def containsDuplicate(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: bool
+        """
+        l = {}
+        for i in nums:
+            if i in l:
+                # return True if the element is already in the dictionary
+                return True
+            else:
+                # otherwise add it to the dictionary
+                l[i] = 1
+        # if it runs through the for loop return True
+        return False
