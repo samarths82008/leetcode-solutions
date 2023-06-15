@@ -1,0 +1,16 @@
+class Solution(object):
+    def minNumber(self, nums1, nums2):
+        """
+        :type nums1: List[int]
+        :type nums2: List[int]
+        :rtype: int
+        """
+        nums1.sort()
+        nums2.sort()
+        for i in nums1:
+            if i in nums2:
+                return i
+        if nums1[0] < nums2[0]:           
+            return nums1[0]*10+nums2[0]
+        else:
+            return nums1[0] + nums2[0]*10
