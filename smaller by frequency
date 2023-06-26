@@ -1,0 +1,16 @@
+class Solution:
+    def numSmallerByFrequency(self, queries: List[str], words: List[str]) -> List[int]:
+	def lex(a):
+		x = sorted(list(s))[0]
+	return s.count(x)
+	q = [f(i) for i in queries]	
+	w = [f(z) for z in words]
+	n = []
+	count = 0
+	for a in query:
+		count = 0
+		for y in word:
+			if y > x:
+				count += 1
+		m.append(count)
+	return m 
