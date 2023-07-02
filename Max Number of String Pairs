@@ -1,0 +1,10 @@
+class Solution:
+    def maximumNumberOfStringPairs(self, words: List[str]) -> int:
+        l = []
+        for i in words:
+            for j in words:
+                if i == j[::-1]:
+                    if i not in l and j not in l and i != j:
+                        l.append(i)
+        print(l)
+        return len(l)
