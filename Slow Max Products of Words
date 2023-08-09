@@ -1,0 +1,11 @@
+class Solution:
+    def maxProduct(self, words: List[str]) -> int:
+        l = []
+        for i in words:
+            for j in words:
+                str_ = ''.join(set(i).intersection(j)) 
+                if len(str_) == 0:    
+                    l.append(len(i)*len(j))					
+        if len(l) != 0:   
+            return max(l)
+        return 0
