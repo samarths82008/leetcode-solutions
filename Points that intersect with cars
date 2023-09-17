@@ -1,0 +1,8 @@
+class Solution:
+    def numberOfPoints(self, nums: List[List[int]]) -> int:
+        nums.sort(key = lambda x: x[0])
+        r = big = 0
+        for a, b in nums:
+            r += max(0, b - max(a - 1, big))
+            big = max(big, b)
+        return r
