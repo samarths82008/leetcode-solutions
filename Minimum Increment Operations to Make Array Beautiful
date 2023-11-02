@@ -1,0 +1,6 @@
+class Solution:
+    def minIncrementOperations(self, nums: List[int], k: int) -> int:
+        x = [0, 0, 0]
+        for num in nums:
+            x = [x[-2], x[-1], max(k - num, 0) + min(x)]
+        return min(x)
