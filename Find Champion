@@ -1,0 +1,7 @@
+class Solution:
+    def findChampion(self, grid: List[List[int]]) -> int:
+        x,team = 0,0
+        for i in range(len(grid)):
+            if sum(grid[i]) > x:
+                x, team = sum(grid[i]),i
+        return team
