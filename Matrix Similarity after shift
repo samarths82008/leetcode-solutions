@@ -1,0 +1,21 @@
+class Solution:
+    def areSimilar(self, mat: List[List[int]], k: int) -> bool:
+        m = len(mat)
+        n = len(mat[0])
+        k2 = k % n
+        
+        if k2 == 0:
+            return True
+        
+        mat2 = []
+        
+        for i in range(m):
+            row = mat[i]
+            if i % 2 == 0:
+                row2 = row[k2:] + row[:k2]
+                mat2.append(row2)
+            else:
+                row2 = row[-k2:] + row[:n - k2]
+                mat2.append(row2)
+        
+        return mat2 == mat
