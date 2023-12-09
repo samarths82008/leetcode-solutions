@@ -1,0 +1,17 @@
+class Solution:
+    def findIntersectionValues(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        x = []
+        y = 0
+        z = 0
+        
+        for i in range(0,len(nums1),1):
+            if nums1[i] in nums2:
+                y += 1
+        
+        x.append(y)
+        
+        for i in range(0,len(nums2),1):
+            if nums2[i] in nums1:
+                z += 1
+        x.append(z)
+        return x
