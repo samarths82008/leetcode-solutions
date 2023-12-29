@@ -1,0 +1,18 @@
+class Solution:
+    def minimumCost(self, source: str, target: str, original: List[str], changed: List[str], cost: List[int]) -> int:
+        spent = 0
+        d = {} 
+        costs = {}
+        for x in range(len(original)):
+            d[original[x]] = changed[x]
+        for y in range(len(original)):
+            costs[original[x]] = cost[x]
+        for i in range(len(source)):
+            if source[i] != target[i]:
+                if d[source[i]] != target[i]:
+                    return -1
+            else:
+                spent += costs[source[i]]
+
+        return cost
+        
