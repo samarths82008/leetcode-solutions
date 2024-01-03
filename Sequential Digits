@@ -1,0 +1,17 @@
+class Solution:
+    def sequentialDigits(self, low: int, high: int) -> List[int]:
+        ans = []
+        for m in range(1,9):
+            n = str(m)
+            while int(n) <= high:
+                if low <= int(n) and int(n) <= high:
+                    ans.append(int(n))
+
+                if n[-1] == "9":
+                    break
+                else:
+                    n += str(int(n[-1]) + 1)
+
+        ans.sort()
+
+        return ans
