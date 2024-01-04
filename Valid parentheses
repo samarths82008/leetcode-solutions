@@ -1,0 +1,14 @@
+class Solution:
+    def minRemoveToMakeValid(self, s: str) -> str:
+        closing, opening, ans = s.count(')'), 0, ''
+        for i in s:
+            if i == '(':
+                opening += 1
+                if opening <= closing: ans += '('
+            elif i == ')':
+                if opening > 0: ans += ')'
+                closing -= 1; opening -= 1
+                if opening < 0: opening = 0
+            else:
+                 ans += i
+        return ans
