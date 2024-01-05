@@ -1,0 +1,18 @@
+class Solution:
+    def findMissingAndRepeatedValues(self, grid: List[List[int]]) -> List[int]:
+        a = len(grid)**2
+        sum = a * (a+1)//2 
+        repeat = 0 
+        missing = 0
+        total = 0
+        d = {}
+        for i in grid:
+            for y in i:
+                if y in d:
+                    repeat = y
+                else:
+                    d[y] = 1
+                    total += y
+        missing = sum - total
+        return [repeat,missing]
+
