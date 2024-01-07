@@ -1,0 +1,14 @@
+class Solution:
+    def checkArithmeticSubarrays(self, nums: List[int], l: List[int], r: List[int]) -> List[bool]:
+        p = []
+        def arithmetic(x):
+            i = 1
+            difference = x[1]- x[0]
+            while i != len(x):
+                if x[i+1]-x[i] != difference:
+                    return 'false'
+            return 'true'
+        p.append(arithmetic(nums))
+        p.append(arithmetic(l))
+        p.append(arithmetic(r))
+        return p
