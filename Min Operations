@@ -1,0 +1,7 @@
+class Solution:
+    def minOperations(self, nums: List[int], k: int) -> int:
+        x = 0
+        for i in nums:
+            x ^= i
+        a = x ^ k
+        return bin(a).count("1")
