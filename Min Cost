@@ -1,0 +1,16 @@
+class Solution:
+    def minimumCost(self, nums: List[int]) -> int:
+        sn = sorted(nums)
+        i2 = len(nums)
+        i3 = len(nums)
+        for i in range(len(nums)):
+            if nums[i] == sn[0]:
+                i1 = i
+            elif nums[i] == sn[1]:
+                i2 = i
+            elif nums[i] == sn[2]:
+                i3 = i
+        if i1 == 0 or i2 == 0 or i3 == 0 or nums[i1] == nums[0]:
+            return sum(sn[:3])
+        else:
+            return nums[0] + sum(sn[:2])
